@@ -38,39 +38,12 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-900 text-gray-300">
-      {/* Newsletter Section */}
-      <div className="border-b border-gray-800">
-        <div className="container mx-auto px-4 py-12">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            <div className="max-w-lg">
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Subscribe to Our Newsletter
-              </h3>
-              <p className="text-gray-400">
-                Stay updated with our latest news, updates, and financial tips.
-              </p>
-            </div>
-            <div className="flex w-full md:w-auto gap-2">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-navy-800 border-gray-700 text-white placeholder:text-gray-500"
-              />
-              <Button className="bg-primary hover:bg-primary/90 text-white">
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer className="bg-navy-900 text-white">
+      <div className="container mx-auto px-4 py-12 md:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {/* Company Info */}
-          <div className="space-y-6">
-            <Link to="/" className="flex items-center gap-2">
+          <div className="space-y-4 md:space-y-6 text-center sm:text-left">
+            <Link to="/" className="flex items-center gap-2 justify-center sm:justify-start">
               <div className="w-9 h-9 bg-[#00A7B1] rounded-full flex items-center justify-center">
                 <span className="text-white font-bold text-xl">N</span>
               </div>
@@ -79,10 +52,10 @@ export default function Footer() {
                 <span className="text-xs text-red-400">Microfinance Limited</span>
               </div>
             </Link>
-            <p className="text-gray-400">
+            <p className="text-gray-400 text-sm md:text-base">
               Empowering your financial journey with innovative solutions and trusted partnerships.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center sm:justify-start">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
@@ -97,14 +70,14 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-6">Quick Links</h4>
-            <ul className="space-y-4">
+          <div className="text-center sm:text-left">
+            <h4 className="text-lg font-semibold text-white mb-4 md:mb-6">Quick Links</h4>
+            <ul className="space-y-3 md:space-y-4">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 justify-center sm:justify-start text-sm md:text-base"
                   >
                     <ArrowRight className="h-4 w-4" />
                     {link.name}
@@ -115,14 +88,14 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-6">Our Services</h4>
-            <ul className="space-y-4">
+          <div className="text-center sm:text-left">
+            <h4 className="text-lg font-semibold text-white mb-4 md:mb-6">Our Services</h4>
+            <ul className="space-y-3 md:space-y-4">
               {services.map((service) => (
                 <li key={service.name}>
                   <Link
                     to={service.href}
-                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
+                    className="text-gray-400 hover:text-white transition-colors flex items-center gap-2 justify-center sm:justify-start text-sm md:text-base"
                   >
                     <ArrowRight className="h-4 w-4" />
                     {service.name}
@@ -132,43 +105,48 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold text-white mb-6">Contact Us</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
-                <span>Posta House, 7th Floor, Ohio Street, Dar es Salaam</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-primary" />
-                <span>+255 752 382 939</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-primary" />
-                <span>info@nafuu.co.tz</span>
-              </li>
-            </ul>
+          {/* Newsletter */}
+          <div className="text-center sm:text-left">
+            <h4 className="text-lg font-semibold text-white mb-4 md:mb-6">Stay Updated</h4>
+            <p className="text-gray-400 text-sm md:text-base mb-4">
+              Subscribe to our newsletter for the latest updates and financial insights.
+            </p>
+            <form className="flex flex-col gap-2">
+              <Input
+                type="email"
+                placeholder="Enter your email"
+                className="bg-navy-800 border-navy-700 text-white placeholder:text-gray-400 focus:border-[#00A7B1]"
+              />
+              <Button className="bg-[#00A7B1] hover:bg-[#00A7B1]/90 text-white w-full">
+                Subscribe
+              </Button>
+            </form>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
-        <div className="container mx-auto px-4 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} Nafuu. All rights reserved.
-            </p>
-            <div className="flex gap-6 text-sm">
-              <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-gray-400 hover:text-white transition-colors">
-                Terms of Service
-              </Link>
+        {/* Contact Info */}
+        <div className="mt-12 md:mt-16 pt-8 md:pt-12 border-t border-navy-800">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
+            <div className="flex items-center gap-3 justify-center sm:justify-start">
+              <Phone className="h-5 w-5 text-[#00A7B1]" />
+              <span className="text-gray-400 text-sm md:text-base">+255 123 456 789</span>
+            </div>
+            <div className="flex items-center gap-3 justify-center sm:justify-start">
+              <Mail className="h-5 w-5 text-[#00A7B1]" />
+              <span className="text-gray-400 text-sm md:text-base">info@nafuu.co.tz</span>
+            </div>
+            <div className="flex items-center gap-3 justify-center sm:justify-start">
+              <MapPin className="h-5 w-5 text-[#00A7B1]" />
+              <span className="text-gray-400 text-sm md:text-base">Dar es Salaam, Tanzania</span>
             </div>
           </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-navy-800 text-center">
+          <p className="text-gray-400 text-sm">
+            © {new Date().getFullYear()} Nafuu Microfinance Limited. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
